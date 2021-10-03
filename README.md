@@ -13,4 +13,4 @@ The resulting image is saved to the top level of the Assets folder when invoked 
 
 A screenshot of a plane mapped with the material and the material settings:
 
-![Screenshot with demo content] (ShaderGraphTextureMixerImage.jpg?raw=true)
+![Screenshot with demo content](ShaderGraphTextureMixerImage.jpg?raw=true)
