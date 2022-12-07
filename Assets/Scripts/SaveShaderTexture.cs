@@ -8,59 +8,56 @@ using UnityEngine;
 
 public class SaveShaderTexture : MonoBehaviour
 {
-    [SerializeField]
+	[SerializeField]
 	private int TextureLength = 1024;
 
 	[SerializeField]
 	private string baseFilename = "UntitledTexture";
-	
-    [SerializeField]
+
 	private Texture2D texture;
     
-    public void Save()
-    {
- 		RenderTexture buffer = new RenderTexture( 
- 							   TextureLength, 
-                               TextureLength, 
-                               0,                            // depth setting
-                               RenderTextureFormat.ARGB32,   // Standard colour format
-                               RenderTextureReadWrite.sRGB // do sRGB conversions
-                           );
+	public void Save()
+	{
+		RenderTexture buffer = new RenderTexture( 
+			TextureLength, 
+			TextureLength, 
+			0,                            // depth setting
+			RenderTextureFormat.ARGB32,   // Standard colour format
+ 			RenderTextureReadWrite.sRGB // do sRGB conversions
+		);
 
-        texture = new Texture2D(TextureLength,TextureLength,TextureFormat.ARGB32,true);
+		texture = new Texture2D(TextureLength,TextureLength,TextureFormat.ARGB32,true);
 
-        MeshRenderer render = GetComponent<MeshRenderer>();
+		MeshRenderer render = GetComponent<MeshRenderer>();
         
-        Material material = render.sharedMaterial;
+		Material material = render.sharedMaterial;
 
-        Graphics.Blit(null, buffer, material);
-        RenderTexture.active = buffer;           // If not using a scene camera
+		Graphics.Blit(null, buffer, material);
+		RenderTexture.active = buffer;           // If not using a scene camera
 
-        texture.ReadPixels(
-          new Rect(0, 0, TextureLength, TextureLength), // Capture the whole texture
-          0, 0,                          // Write starting at the top-left texel
-          false);                          // No mipmaps
+		texture.ReadPixels(
+			new Rect(0, 0, TextureLength, TextureLength), // Capture the whole texture
+			0, 0,                          // Write starting at the top-left texel
+			false);                          // No mipmaps
 
-        System.IO.File.WriteAllBytes( Application.dataPath + "/"+ baseFilename + ".png", texture.EncodeToPNG() ); 
+		System.IO.File.WriteAllBytes( Application.dataPath + "/"+ baseFilename + ".png", texture.EncodeToPNG() ); 
         
 		
 		  //Debug.Log(EditorApplication.applicationPath);
 		 // Debug.Log(Application.dataPath);
-    }
+	}
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	void Start()
+	{
+	
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Save();
-        }
-    }
+	void Update()
+	{
+
+		if(Input.GetKeyDown(KeyCode.Space))
+		{
+			Save();
+		}
+	}
 }
