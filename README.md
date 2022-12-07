@@ -20,5 +20,5 @@ To save your results, set the Material as you want with the input images.  Then 
 
 ![Screenshot with demo content](SaveShaderTextureScreenshot.png?raw=true)
 
-In play mode, press the spacebar to save an image file.  This will be put in the Assets folder of the project.
+In play mode, press the spacebar to save an image file.  The file will be saved in the Assets folder of the project.
 
