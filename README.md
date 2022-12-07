@@ -14,3 +14,11 @@ The resulting image is saved to the top level of the Assets folder when invoked 
 A screenshot of a plane mapped with the material and the shader inputs:
 
 ![Screenshot with demo content](ShaderGraphTextureMixerImage.jpg?raw=true)
+
+
+To save your results, set the Material as you want with the input images.  Then in the Scene find the GameObject that has the Save Shader Texture Component on it.  Change the Texture Length and Base Filename.
+
+![Screenshot with demo content](SaveShaderTextureScreenshot.png?raw=true)
+
+In play mode, press the spacebar to save an image file.  This will be put in the Assets folder of the project.
+
