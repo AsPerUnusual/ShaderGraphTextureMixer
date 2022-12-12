@@ -15,7 +15,7 @@ A screenshot of a plane mapped with the material and the shader inputs:
 ![Screenshot with demo content](ShaderGraphTextureMixerImage.jpg?raw=true)
 
 
-To save your results, set the Material as you want with the input images.  Then in the Scene find the GameObject that has the Save Shader Texture Component on it.  Change the Texture Length and Base Filename.
+To save your results, set the Material as you want with the input images.  Then in the Scene find the GameObject that has the Save Shader Texture Component on it.  Adjust the Texture Length and Base Filename to suit your needs.
 
 ![Screenshot with demo content](SaveShaderTextureScreenshot.png?raw=true)
 
