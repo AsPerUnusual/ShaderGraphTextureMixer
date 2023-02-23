@@ -1,5 +1,5 @@
 ### ShaderGraphTextureMixer
-A texture mixer / "swizzler" setup using Shader Graph in Unity
+A texture color channel mixer / "swizzler" setup using Shader Graph in Unity
 
 A quick way to take images and set them to certain channels and re-arrange those channels as well.
 
